@@ -6,7 +6,11 @@ public class SerieTemporal {
 
 	private final List<Candlestick> candles;
 
-	public SerieTemporal(List<Candlestick> candles) {
+	public SerieTemporal(List<Candlestick> candles)
+			throws IllegalArgumentException {
+		if (candles == null) {
+			throw new IllegalArgumentException("a lista não pode ser nula");
+		}
 		this.candles = candles;
 	}
 
