@@ -1,6 +1,5 @@
 package br.com.caelum.argentum.indicadores;
 
-import br.com.caelum.argentum.modelo.Candle;
 import br.com.caelum.argentum.modelo.SerieTemporal;
 
 public class MediaMovelSimples {
