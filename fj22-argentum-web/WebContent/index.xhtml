@@ -9,10 +9,30 @@
 
 <h:body>
 
-	<p:panel header="Negociações" footer="Argentum Web">
+	<p:panel header="Dados do gráfico">
+
+		<h:form id="dadosGrafico">
+			<p:growl />
+			<h:panelGrid>
+				<p:outputLabel for="titulo" value="Título:" />
+				<p:inputText id="titulo" value="#{argentumBean.titulo}"
+					required="true">
+					<f:validateLength minimum="3" />
+				</p:inputText>
+				<h:commandButton actionListener="#{argentumBean.preparaDados}"
+					value="Gerar gráfico" />
+			</h:panelGrid>
+		</h:form>
 
 		<p:lineChart value="#{argentumBean.modeloGrafico}" legendPosition="e"
-			title="BBSA3" />
+			title="#{argentumBean.titulo}"
+			rendered="#{argentumBean.modeloGrafico != null}" />
+
+	</p:panel>
+
+
+	<p:panel header="Negociações" footer="Argentum Web"
+		rendered="#{argentumBean.modeloGrafico != null}">
 
 		<h:form id="listaNegociacao">
 

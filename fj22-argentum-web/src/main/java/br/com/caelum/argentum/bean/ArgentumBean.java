@@ -2,7 +2,6 @@ package br.com.caelum.argentum.bean;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -25,8 +24,16 @@ public class ArgentumBean {
 
 	private List<Negociacao> negociacoes;
 	private ChartModel modeloGrafico;
+	private String titulo;
 
-	@PostConstruct
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
 	public void preparaDados() {
 		ClienteWebService cliente = new ClienteWebService();
 		this.negociacoes = cliente.getNegociacoes();
