@@ -4,9 +4,9 @@ import java.util.List;
 
 public class SerieTemporal {
 
-	private final List<Candlestick> candles;
+	private final List<Candle> candles;
 
-	public SerieTemporal(List<Candlestick> candles)
+	public SerieTemporal(List<Candle> candles)
 			throws IllegalArgumentException {
 		if (candles == null) {
 			throw new IllegalArgumentException("a lista não pode ser nula");
@@ -14,7 +14,7 @@ public class SerieTemporal {
 		this.candles = candles;
 	}
 
-	public Candlestick getCandle(int i) {
+	public Candle getCandle(int i) {
 		return this.candles.get(i);
 	}
 
